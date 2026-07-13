@@ -79,3 +79,29 @@ scrollVideos.forEach(video => {
   prepareInlineVideo(video);
   videoObserver.observe(video);
 });
+
+
+// Gallery lightbox
+const lightbox = document.getElementById("lightbox");
+if (lightbox) {
+  const lightboxImage = lightbox.querySelector("img");
+  const closeLightbox = () => {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.src = "";
+  };
+  document.querySelectorAll(".gallery-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      lightboxImage.src = item.dataset.full;
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+    });
+  });
+  lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLightbox();
+  });
+}
