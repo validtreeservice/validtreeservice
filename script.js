@@ -1,107 +1,15 @@
 const header=document.querySelector('.site-header');
 const menuButton=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.main-nav');
-window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>30));
-menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',open);document.body.classList.toggle('menu-open',open)});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('estimate-form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const data=new FormData(e.currentTarget);
-  const subject=`Estimate request - ${data.get('name')} - ${data.get('service')}`;
-  const body=`Name: ${data.get('name')}\nPhone: ${data.get('phone')}\nProperty address: ${data.get('address')}\nService: ${data.get('service')}\n\nProject details:\n${data.get('details')}\n\nPlease attach any property photos before sending.`;
-  window.location.href=`mailto:validtreeservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
-
-
-// iPhone/Safari video handling.
-const heroVideo = document.getElementById('hero-video');
-const videoStartButton = document.getElementById('video-start');
-const scrollVideos = document.querySelectorAll('.scroll-video');
-
-function prepareInlineVideo(video) {
-  if (!video) return;
-  video.muted = true;
-  video.defaultMuted = true;
-  video.setAttribute('muted', '');
-  video.setAttribute('playsinline', '');
-  video.setAttribute('webkit-playsinline', '');
-}
-
-async function tryPlay(video) {
-  if (!video) return false;
-  prepareInlineVideo(video);
-  try {
-    await video.play();
-    return true;
-  } catch (error) {
-    return false;
-  }
-}
-
-prepareInlineVideo(heroVideo);
-window.addEventListener('DOMContentLoaded', async () => {
-  const played = await tryPlay(heroVideo);
-  if (!played && videoStartButton) videoStartButton.classList.add('show');
-});
-
-if (videoStartButton) {
-  videoStartButton.addEventListener('click', async () => {
-    if (await tryPlay(heroVideo)) videoStartButton.classList.remove('show');
-  });
-}
-
-// A real tap anywhere can unlock playback when Safari blocks autoplay.
-const unlockVideos = async () => {
-  await tryPlay(heroVideo);
-  if (videoStartButton && !heroVideo.paused) videoStartButton.classList.remove('show');
-  document.removeEventListener('touchstart', unlockVideos);
-  document.removeEventListener('click', unlockVideos);
-};
-document.addEventListener('touchstart', unlockVideos, { passive: true });
-document.addEventListener('click', unlockVideos);
-
-// Only play the lower-page video while it is visible. This is more reliable on iPhone.
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach(async (entry) => {
-    const video = entry.target;
-    if (entry.isIntersecting) {
-      await tryPlay(video);
-    } else {
-      video.pause();
-    }
-  });
-}, { threshold: 0.35 });
-
-scrollVideos.forEach(video => {
-  prepareInlineVideo(video);
-  videoObserver.observe(video);
-});
-
-
-// Gallery lightbox
-const lightbox = document.getElementById("lightbox");
-if (lightbox) {
-  const lightboxImage = lightbox.querySelector("img");
-  const closeLightbox = () => {
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImage.src = "";
-  };
-  document.querySelectorAll(".gallery-item").forEach((item) => {
-    item.addEventListener("click", () => {
-      lightboxImage.src = item.dataset.full;
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-    });
-  });
-  lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) closeLightbox();
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeLightbox();
-  });
-}
+if(header) window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>30));
+if(menuButton&&nav){menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',open);document.body.classList.toggle('menu-open',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');document.body.classList.remove('menu-open')}));}
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
+const form=document.getElementById('estimate-form');if(form)form.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const subject=`Estimate request - ${d.get('name')} - ${d.get('service')}`;const body=`Name: ${d.get('name')}\nPhone: ${d.get('phone')}\nAddress: ${d.get('address')}\nService: ${d.get('service')}\n\nProject details:\n${d.get('details')}`;location.href=`mailto:validtreeservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`});
+function prepareVideo(v){if(!v)return;v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','')}
+const hero=document.getElementById('hero-video'),start=document.getElementById('video-start');prepareVideo(hero);async function play(v){if(!v)return false;prepareVideo(v);try{await v.play();return true}catch{return false}}
+window.addEventListener('DOMContentLoaded',async()=>{if(hero&&!(await play(hero))&&start)start.classList.add('show')});if(start)start.addEventListener('click',async()=>{if(await play(hero))start.classList.remove('show')});
+document.querySelectorAll('.scroll-video').forEach(v=>{prepareVideo(v);new IntersectionObserver(async es=>{for(const e of es)e.isIntersecting?await play(e.target):e.target.pause()},{threshold:.3}).observe(v)});
+const slides=[...document.querySelectorAll('.review-slide')],dots=[...document.querySelectorAll('.review-dots button')];let current=0,timer;function showReview(i){if(!slides.length)return;current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===current));dots.forEach((d,n)=>d.classList.toggle('active',n===current))}function auto(){clearInterval(timer);timer=setInterval(()=>showReview(current+1),5500)}
+document.querySelector('.review-arrow.prev')?.addEventListener('click',()=>{showReview(current-1);auto()});document.querySelector('.review-arrow.next')?.addEventListener('click',()=>{showReview(current+1);auto()});dots.forEach((d,i)=>d.addEventListener('click',()=>{showReview(i);auto()}));showReview(0);auto();
+const lightbox=document.getElementById('lightbox');if(lightbox){const img=lightbox.querySelector('img');const close=()=>{lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');img.src=''};document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{img.src=item.dataset.full;lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false')}));lightbox.querySelector('.lightbox-close')?.addEventListener('click',close);lightbox.addEventListener('click',e=>{if(e.target===lightbox)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}
