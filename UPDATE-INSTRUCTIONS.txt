@@ -1,12 +1,17 @@
-VALID TREE SERVICE — CHANNELVIEW WEBSITE UPDATE
+VALID TREE SERVICE — BAYTOWN AND HUDSON GALLERY UPDATE
 
-1. Open GitHub Desktop and make sure the Current Repository is the public validtreeservice website.
+1. Open GitHub Desktop and select the public validtreeservice website repository.
 2. Click Repository > Show in Explorer.
-3. Copy everything from this update package into that website folder.
-4. When Windows asks, choose Replace the files in the destination.
-5. Return to GitHub Desktop. Confirm the changed files include index.html, gallery.html, script.js, sitemap.xml and the new Channelview files.
-6. Enter this summary: Add Channelview project and silent hero video
-7. Click Commit to main, then Push origin.
-8. Wait 2–5 minutes, open https://validtreeservice.com/?channelview=1 and refresh once.
+3. Open this update ZIP. Its website files are at the top level, not inside another project folder.
+4. Copy all files and folders from the ZIP directly into the website repository folder.
+5. When Windows asks, choose Replace the files in the destination. Existing customer-facing pages, reviews, older gallery projects, and videos are included and preserved.
+6. Return to GitHub Desktop and review the changed files.
+7. Use this commit summary: Add Baytown and Hudson projects plus new hero video
+8. Click Commit to main, then Push origin.
+9. Wait 2–5 minutes, open https://validtreeservice.com/ and perform one hard refresh (Ctrl+F5).
 
-This update does not delete existing photos, videos, reviews, service pages, or gallery projects.
+Expected result:
+- The top home-page video is the new Baytown controlled-rigging video.
+- The lower chipper-and-worker video remains unchanged.
+- The gallery begins with separate Baytown and new Houston Hudson-area project sections.
+- All 31 unique uploaded photos are included. The duplicate clipboard copy was intentionally omitted.
