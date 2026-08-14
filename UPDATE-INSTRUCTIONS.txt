@@ -1,17 +1,25 @@
-VALID TREE SERVICE — BAYTOWN AND HUDSON GALLERY UPDATE
+VALID TREE SERVICE - SEO, SPEED, BAYTOWN AND HUDSON UPDATE
 
 1. Open GitHub Desktop and select the public validtreeservice website repository.
 2. Click Repository > Show in Explorer.
-3. Open this update ZIP. Its website files are at the top level, not inside another project folder.
-4. Copy all files and folders from the ZIP directly into the website repository folder.
-5. When Windows asks, choose Replace the files in the destination. Existing customer-facing pages, reviews, older gallery projects, and videos are included and preserved.
+3. Open the update ZIP. The website files are at the top level, not inside another project folder.
+4. Copy every file and folder from the ZIP directly into the website repository folder.
+5. When Windows asks, choose Replace the files in the destination.
 6. Return to GitHub Desktop and review the changed files.
-7. Use this commit summary: Add Baytown and Hudson projects plus new hero video
+7. Use this commit summary: Improve SEO speed and add Baytown and Hudson project pages
 8. Click Commit to main, then Push origin.
-9. Wait 2–5 minutes, open https://validtreeservice.com/ and perform one hard refresh (Ctrl+F5).
+9. Wait 2-5 minutes, open https://validtreeservice.com/ and perform one hard refresh with Ctrl+F5.
 
 Expected result:
-- The top home-page video is the new Baytown controlled-rigging video.
-- The lower chipper-and-worker video remains unchanged.
-- The gallery begins with separate Baytown and new Houston Hudson-area project sections.
-- All 31 unique uploaded photos are included. The duplicate clipboard copy was intentionally omitted.
+- The home page uses a short, optimized Baytown controlled-rigging header video.
+- Videos below the first screen wait until a visitor requests them or scrolls to them.
+- The lower chipper-and-worker video remains on the home page.
+- Baytown and Houston Hudson-area projects have dedicated search-friendly pages.
+- The gallery still contains all uploaded project photographs.
+- The sitemap includes the new project pages and current update dates.
+- The company phone number remains 832-445-6535.
+
+Important:
+- Do not run a batch file. None is included or required.
+- Do not upload the ZIP itself into the repository. Open it and copy its contents.
+- Existing unreferenced media can remain in the repository; it will not load on visitors' pages.
