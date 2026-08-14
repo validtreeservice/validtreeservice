@@ -1,0 +1,12 @@
+GOOGLE SEARCH CONSOLE VERIFICATION UPDATE
+
+1. Open this ZIP.
+2. Copy index.html directly into the root of the validtreeservice GitHub repository.
+3. Choose Replace when Windows asks about the existing index.html.
+4. In GitHub Desktop, commit and push the change.
+5. Wait for https://validtreeservice.com/ to update.
+6. Open the live homepage, press Ctrl+U, then press Ctrl+F and search for:
+   google-site-verification
+7. Once the tag is visible in the live page source, return to Google Search Console and click Verify.
+
+Do not upload the ZIP itself. Do not put index.html inside another folder.
