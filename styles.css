@@ -96,3 +96,20 @@
 @media(max-width:900px){.review-track{min-height:470px}.faq-grid,.service-benefits{grid-template-columns:1fr}}
 @media(max-width:620px){.hero{min-height:100svh;align-items:center;padding-top:105px;padding-bottom:92px}.hero h1{font-size:clamp(38px,12vw,52px);line-height:1}.hero-copy{margin:18px 0 22px;font-size:16px}.hero-actions{display:grid;grid-template-columns:1fr;width:100%}.hero-actions .button{min-height:48px}.trust-row{margin-top:20px;gap:7px}.trust-row span{font-size:11px;padding:6px 8px}.hero-video{object-position:62% center}.review-slider{padding:10px 0 42px}.review-track{min-height:390px}.review-slide img{max-height:340px}.review-arrow{top:auto;bottom:0}.review-arrow.prev{left:0}.review-arrow.next{right:0}.reviews-section{padding-bottom:70px}}
 .review-slide img{object-fit:cover;object-position:top}.review-slide.review-sergio img{aspect-ratio:669/440}.review-slide.review-mike img{aspect-ratio:669/430}.review-slide.review-jhoanna img{aspect-ratio:682/285}
+
+/* Privacy policy */
+.privacy-main{background:var(--cream);color:#142018}
+.privacy-hero{padding:190px clamp(24px,7vw,110px) 72px;background:linear-gradient(135deg,#07120c,#123522);color:#fff}
+.privacy-hero h1{max-width:900px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:500;letter-spacing:-.04em;line-height:.95}
+.privacy-hero>p:not(.eyebrow):not(.privacy-effective){max-width:760px;margin:28px 0 16px;color:#dce4de;font-size:1.08rem}
+.privacy-effective{margin:0;color:#b8c3bb;font-size:.92rem}
+.privacy-content{max-width:920px;margin:0 auto;padding:80px clamp(24px,6vw,72px) 110px}
+.privacy-content section{padding:0 0 34px;margin:0 0 34px;border-bottom:1px solid #ccd5ce}
+.privacy-content section:last-child{margin-bottom:0;border-bottom:0}
+.privacy-content h2{margin:0 0 14px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.65rem,3vw,2.25rem);line-height:1.12}
+.privacy-content p,.privacy-content li{color:#445349}
+.privacy-content ul{padding-left:1.35rem}
+.privacy-content li+li{margin-top:8px}
+.privacy-content a{color:#365f19;font-weight:800}
+.copyright a{margin-left:12px;text-decoration:underline}
+@media(max-width:620px){.privacy-hero{padding-top:135px;padding-bottom:52px}.privacy-content{padding-top:52px;padding-bottom:80px}.privacy-content section{padding-bottom:26px;margin-bottom:26px}}
