@@ -211,7 +211,7 @@ a,button{-webkit-tap-highlight-color:rgba(155,200,77,.28)}
 
 /* Junk removal and light demolition landing pages */
 .service-detail-main{background:var(--cream);color:#142018}
-.service-detail-hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:clamp(40px,7vw,110px);align-items:end;min-height:82svh;padding:190px clamp(24px,7vw,110px) 92px;background:radial-gradient(circle at 82% 16%,rgba(155,200,77,.22),transparent 26%),linear-gradient(135deg,#06130c,#123522 62%,#19482e);color:#fff;overflow:hidden}
+.service-detail-hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:clamp(40px,7vw,110px);align-items:center;min-height:82svh;padding:190px clamp(24px,7vw,110px) 92px;background:radial-gradient(circle at 82% 16%,rgba(155,200,77,.22),transparent 26%),linear-gradient(135deg,#06130c,#123522 62%,#19482e);color:#fff;overflow:hidden}
 .service-detail-hero:after{content:"";position:absolute;z-index:-1;right:-14vw;bottom:-27vw;width:60vw;height:60vw;border:1px solid rgba(255,255,255,.12);border-radius:50%;box-shadow:0 0 0 8vw rgba(255,255,255,.035),0 0 0 16vw rgba(255,255,255,.025)}
 .service-detail-hero-copy{max-width:880px}
 .service-detail-hero h1,.service-detail-section h2,.service-detail-cta h2,.service-limit-card h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.045em;line-height:.97}
@@ -220,6 +220,14 @@ a,button{-webkit-tap-highlight-color:rgba(155,200,77,.28)}
 .service-detail-proof{display:grid;border-top:1px solid rgba(255,255,255,.25);background:rgba(4,18,11,.2)}
 .service-detail-proof span{padding:23px 8px;border-bottom:1px solid rgba(255,255,255,.25);font-weight:800}
 .service-detail-proof span:before{content:"✓";margin-right:12px;color:var(--lime)}
+.service-brand-showcase{display:grid;gap:16px;align-self:center;align-content:center;min-width:0}
+.service-brand-art{position:relative;overflow:hidden;height:clamp(250px,22vw,330px);min-height:0;border:1px solid rgba(255,255,255,.18);background:#000;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.service-brand-art:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 60px rgba(0,0,0,.3)}
+.service-brand-art img{width:100%;height:100%;object-fit:cover}
+.service-brand-art-junk img{object-position:center 34%}
+.service-brand-art-demolition img{object-fit:contain;padding:12px}
+.service-brand-banner{max-width:calc(var(--max) - 44px);margin:0 auto 18px;padding:0 clamp(22px,5vw,68px)}
+.service-brand-banner img{width:100%;height:clamp(310px,34vw,520px);object-fit:cover;object-position:center 50%;border:1px solid #29362e;background:#000;box-shadow:0 24px 70px rgba(18,32,24,.18)}
 .service-detail-section{max-width:var(--max);margin:0 auto;padding:95px clamp(22px,5vw,68px)}
 .service-detail-section h2{font-size:clamp(2.6rem,5.3vw,5rem)}
 .service-detail-intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(45px,8vw,120px);align-items:start}
@@ -245,5 +253,5 @@ a,button{-webkit-tap-highlight-color:rgba(155,200,77,.28)}
 .service-detail-cta h2{max-width:960px;margin:0 auto;font-size:clamp(2.9rem,6vw,5.8rem)}
 .service-detail-cta>p:not(.eyebrow){max-width:720px;margin:24px auto;color:#cbd6ce;font-size:1.06rem}
 .service-detail-cta .hero-actions{justify-content:center;margin-top:30px}
-@media(max-width:900px){.service-detail-hero,.service-detail-intro{grid-template-columns:1fr}.service-scope-grid{grid-template-columns:1fr 1fr}.service-detail-hero{min-height:auto}.service-detail-proof{margin-top:16px}}
-@media(max-width:620px){.service-detail-hero{padding:135px 22px 62px}.service-detail-hero h1{font-size:clamp(3.15rem,14vw,4.5rem)}.service-detail-section{padding:65px 22px}.service-scope-grid{grid-template-columns:1fr}.service-scope-grid article{min-height:220px;padding:26px 22px}.service-scope-grid h3{margin-top:40px}.service-process li{grid-template-columns:54px 1fr;gap:16px}.service-detail-cta{padding:76px 22px}.service-detail-cta .hero-actions{display:grid}}
+@media(max-width:900px){.service-detail-hero,.service-detail-intro{grid-template-columns:1fr}.service-scope-grid{grid-template-columns:1fr 1fr}.service-detail-hero{min-height:auto}.service-detail-proof{margin-top:0}.service-brand-showcase{grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr);align-items:stretch}.service-brand-art{height:300px;min-height:0}.service-detail-proof{align-content:center}}
+@media(max-width:620px){.service-detail-hero{padding:135px 22px 62px}.service-detail-hero h1{font-size:clamp(3.15rem,14vw,4.5rem)}.service-detail-section{padding:65px 22px}.service-scope-grid{grid-template-columns:1fr}.service-scope-grid article{min-height:220px;padding:26px 22px}.service-scope-grid h3{margin-top:40px}.service-process li{grid-template-columns:54px 1fr;gap:16px}.service-detail-cta{padding:76px 22px}.service-detail-cta .hero-actions{display:grid}.service-brand-showcase{grid-template-columns:1fr;gap:12px}.service-brand-art{height:290px;min-height:0}.service-brand-art-junk img{object-position:center 35%}.service-brand-art-demolition img{padding:8px}.service-detail-proof span{padding:17px 8px;font-size:.9rem}.service-brand-banner{padding:0 22px;margin-bottom:0}.service-brand-banner img{height:360px;object-position:center 50%}}
