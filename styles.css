@@ -255,3 +255,22 @@ a,button{-webkit-tap-highlight-color:rgba(155,200,77,.28)}
 .service-detail-cta .hero-actions{justify-content:center;margin-top:30px}
 @media(max-width:900px){.service-detail-hero,.service-detail-intro{grid-template-columns:1fr}.service-scope-grid{grid-template-columns:1fr 1fr}.service-detail-hero{min-height:auto}.service-detail-proof{margin-top:0}.service-brand-showcase{grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr);align-items:stretch}.service-brand-art{height:300px;min-height:0}.service-detail-proof{align-content:center}}
 @media(max-width:620px){.service-detail-hero{padding:135px 22px 62px}.service-detail-hero h1{font-size:clamp(3.15rem,14vw,4.5rem)}.service-detail-section{padding:65px 22px}.service-scope-grid{grid-template-columns:1fr}.service-scope-grid article{min-height:220px;padding:26px 22px}.service-scope-grid h3{margin-top:40px}.service-process li{grid-template-columns:54px 1fr;gap:16px}.service-detail-cta{padding:76px 22px}.service-detail-cta .hero-actions{display:grid}.service-brand-showcase{grid-template-columns:1fr;gap:12px}.service-brand-art{height:290px;min-height:0}.service-brand-art-junk img{object-position:center 35%}.service-brand-art-demolition img{padding:8px}.service-detail-proof span{padding:17px 8px;font-size:.9rem}.service-brand-banner{padding:0 22px;margin-bottom:0}.service-brand-banner img{height:360px;object-position:center 50%}}
+
+/* The supplied junk-removal artwork includes tall black margins. These cropped
+   display files keep the complete artwork centered at every screen size. */
+.service-brand-art.service-brand-art-junk{
+  height:auto;
+  aspect-ratio:1230 / 885;
+}
+.service-brand-art-junk img{
+  object-fit:contain;
+  object-position:center;
+}
+.service-brand-banner.service-brand-banner-junk{
+  max-width:var(--max);
+}
+.service-brand-banner.service-brand-banner-junk img{
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+}
