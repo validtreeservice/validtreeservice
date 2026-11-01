@@ -296,3 +296,14 @@ a,button{-webkit-tap-highlight-color:rgba(155,200,77,.28)}
 .tree-home .hero-actions{flex-wrap:wrap}.latest-tree-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.latest-tree-grid .project-preview{grid-column:auto;min-height:340px}.latest-tree-grid .project-preview img{height:100%;object-fit:cover}.tree-home .land-intro{padding-top:65px;padding-bottom:65px}.tree-home .land-crew img{height:440px}
 @media(max-width:900px){.latest-tree-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.latest-tree-grid{grid-template-columns:1fr}.tree-home .hero-actions{display:grid}.tree-home .land-hero{padding-top:140px;min-height:870px}.tree-home .land-hero h1{font-size:58px}.latest-tree-grid .project-preview{min-height:330px}}
+
+/* Cleveland focus: retain the established design and fit the descriptive headline. */
+.cleveland-home .land-hero h1{font-size:clamp(42px,5.6vw,80px);line-height:1.04;max-width:950px}
+.cleveland-home .hero-copy{max-width:680px}.local-area-copy{max-width:900px;margin:28px auto;text-align:center;line-height:1.7}
+.local-project-figure{margin:0}.local-project-figure img{width:100%;max-height:540px;object-fit:cover}.local-project-figure figcaption{font-size:13px;line-height:1.5;padding-top:12px;color:var(--muted)}
+.local-proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.local-proof-grid .project-preview{grid-column:auto;min-height:360px}.local-proof-grid img{height:100%;object-fit:cover}
+.local-estimate-steps{max-width:850px;line-height:1.8}.local-estimate-steps li{margin:16px 0;padding-left:8px}
+.cleveland-page .service-card{scroll-margin-top:120px}.cleveland-page .service-card h3{margin-top:0}.cleveland-page .location-group p{line-height:1.7}
+.area-list>a{display:inline-block;color:inherit;padding:12px 20px;border:1px solid var(--line);border-radius:30px}.site-footer p{max-width:340px}
+@media(max-width:1100px){.cleveland-home .main-nav,.cleveland-page .main-nav{gap:14px}}
+@media(max-width:700px){.cleveland-home .land-hero{min-height:960px;padding-bottom:150px}.cleveland-home .land-hero h1{font-size:clamp(38px,10vw,58px)}.local-proof-grid{grid-template-columns:1fr}.cleveland-page .info-page-hero h1{font-size:clamp(36px,9vw,58px)}.local-project-figure img{max-height:400px}}
